@@ -112,7 +112,7 @@ if __name__ == "__main__":
     visited = np.zeros_like(image)
 
     n=len(image)
-    contours, segmented=connectedComponents(image,visited,Q, n)
+    contours, segmented=count_areas(image,visited,Q, n)
     output=output(image,segmented, contours)
     print(output)
 
