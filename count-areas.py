@@ -97,19 +97,14 @@ if __name__ == "__main__":
                         metavar="image name",
                         help='path to the Binary image')
     
-    parser.add_argument(
-        "--shape",
-        nargs="*",  # expects ≥ 0 arguments
-        type=int,
-          # default list if no arg value
-    )
+   
     parser.add_argument('--image_h', type=int,required=True,)
     parser.add_argument('--image_w', type=int,required=True,)
 
     
     args = parser.parse_args()      
 
-    image=read_image(args.file_name, args.shape[0], args.shape[1])
+    image=read_image(args.file_name, args.image_h, args.image_w)
     image=np.array(image)
 
     image=reduce_image_size(image,(2,2))
