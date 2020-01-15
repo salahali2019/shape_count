@@ -97,11 +97,13 @@ if __name__ == "__main__":
                         metavar="image name",
                         help='Binary image')
     
-    parser.add_argument('--shape', type=int,required=False,)
+    parser.add_argument('--shape_h', type=int,required=False,)
+    parser.add_argument('--shape_w', type=int,required=False,)
+
     
     args = parser.parse_args()      
 
-    image=read_image("file_name", args.shape[0], args.shape[1])
+    image=read_image(args.file_name, args.shape_h, args.shape_w)
     image=np.array(image)
 
     image=reduce_image_size(image,(2,2))
