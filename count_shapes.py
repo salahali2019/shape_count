@@ -93,7 +93,7 @@ if __name__ == "__main__":
 
 
 
-    parser.add_argument('file_name', required=False,
+    parser.add_argument('--file_name', required=False,
                         metavar="image name",
                         help='Binary image')
     
